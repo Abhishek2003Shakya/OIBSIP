@@ -1,0 +1,665 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Poppon", sans-serif;
+}
+
+:root {
+  --main-color: #682bd7;
+  --bg-color: #a37cf0;
+  --second-color: #bd2e95;
+  --text-color: #ffffff;
+  --second-text-color: #1c1723;
+}
+
+html {
+  font-size: 62%;
+}
+
+body {
+  background: var(--main-color);
+  color: var(--text-color);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 10%;
+  display: flex;
+  background: var(--bg-color);
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  margin-right: auto;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 3.2rem var(--text-color));
+}
+
+.navbar a {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  margin-left: 3.5rem;
+  position: relative;
+  letter-spacing: 0.1rem;
+  transition: 0.3s;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  background: var(--main-color);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active {
+  color: var(--main-color);
+  opacity: 1;
+  transform: translateY(8px);
+}
+
+#menu-icon {
+  font-size: 3.8rem;
+  color: var(--text-color);
+  display: none;
+}
+
+.header_img {
+  margin-top: 7rem;
+  height: 50%;
+}
+
+/* heart gif style */
+.heart_gif img {
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s linear;
+}
+
+.heart_gif img:hover {
+  box-shadow: inset 0 0 35px 5px var(--main-color), 0 0 200px var(--bg-color),
+    inset 0 -2px 1px var(--main-color);
+}
+
+/* icons style */
+.socal-icon {
+  position: absolute;
+  bottom: 10%;
+  left: 6%;
+}
+
+.socal-icon img {
+  width: 90px;
+  border-radius: 30%;
+  transition: 0.3s linear;
+}
+
+.socal-icon img:hover {
+  content: "";
+  filter: drop-shadow(0 0 2.3rem var(--bg-color));
+}
+
+/* custom scrollbar  */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-color);
+  border-radius: 6px;
+}
+
+/* about section style  */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: var(--main-color);
+  padding-top: 10rem;
+  padding-left: 6rem;
+  margin-bottom: 6rem;
+  margin-top: -7rem;
+}
+
+.about_img img {
+  width: 35vw;
+  /* height: 35vw; */
+  border-radius: 20%;
+  padding: 4rem 8%;
+  filter: drop-shadow(0 0 2.3rem var(--text-color));
+}
+
+.heading {
+  text-align: center;
+  font-size: 4.5rem;
+  text-shadow: 0 2.5px 1.5rem var(--second-text-color);
+}
+
+.about-content h2 {
+  text-align: left;
+  line-height: 1.2;
+}
+
+.about-content p {
+  font-size: 1.6rem;
+  margin: 3rem 0 10rem;
+  margin-right: 20rem;
+}
+
+span {
+  color: var(--second-color);
+}
+
+.btn {
+  display: inline;
+  background: var(--second-color);
+  padding: 1rem 2.8rem;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  color: var(--text-color);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 0 3.2rem var(--bg-color);
+}
+
+/* members section style */
+.army .heading {
+  padding: 10rem;
+}
+
+/* create card style */
+.army {
+  background-color: var(--bg-color);
+  /* margin-bottom: 13rem; */
+  /* padding-top: 10rem; */
+  padding-left: 6rem;
+  /* margin-bottom: 6rem; */
+  padding-bottom: 4rem;
+  /* margin-top: -7rem; */
+}
+
+.army .heading {
+  margin-top: -1rem;
+  margin-bottom: -7rem;
+  padding-top: 8rem;
+}
+
+.army-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 308px;
+  height: 400px;
+  background-color: var(--second-color);
+  text-align: center;
+  border-radius: 10px;
+  margin-inline: 30px;
+  margin: 7rem;
+  filter: drop-shadow(0.5px 10px 7px var(--main-color));
+}
+
+.mb_img img {
+  width: 250px;
+  height: 200px;
+  border-radius: 10%;
+  margin-top: -60px;
+  box-shadow: 0 5px 20px var(--text-color, 0.5px);
+  max-width: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.mb_img img:hover {
+  content: "";
+  transform: scale(1.1);
+}
+
+.card h3 {
+  font-size: 30px;
+  margin-top: 14px;
+  /* color: var(--main-color); */
+  color: var(--second-text-color);
+}
+
+.card p {
+  font-size: 13px;
+  margin-top: -9px;
+  padding: 2rem;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.card strong {
+  /* color: var(--main-color); */
+  color: var(--second-text-color);
+}
+
+/* songs section style */
+.songs {
+  background: var(--main-color);
+  /* margin-top: 16rem; */
+}
+
+.songs .heading {
+  padding-top: 10rem;
+}
+
+.songs h2 {
+  margin: 5rem;
+}
+
+.song_container {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+
+.song_box {
+  height: 16rem;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  background: var(--second-color);
+  border-radius: 1rem;
+  box-shadow: 0 0.5px 1rem #000;
+  overflow: hidden;
+  margin: 2rem;
+}
+
+.song h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--text-color);
+}
+
+.song_img {
+  height: 100%;
+  width: 25%;
+}
+
+.song_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: 0.3s ease-in;
+}
+
+.song_img img:hover {
+  filter: blur(2px);
+}
+
+.song {
+  width: 75%;
+}
+
+.song audio {
+  width: 100%;
+  outline: none;
+}
+
+.song audio::-webkit-media-controls-enclosure {
+  background: none;
+}
+
+/* footer section designe */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 9%;
+  background-color: var(--second-text-color);
+}
+
+.footer-text {
+  margin-bottom: 0.6rem;
+}
+
+.footer-text p {
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+}
+
+.footer-text p b a {
+  color: var(--second-color);
+}
+
+.bts {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+}
+
+.bts img {
+  width: 6%;
+  margin-top: -4rem;
+  cursor: pointer;
+  animation: btsImage 4s ease-in-out infinite;
+  transition: 0.3s ease-in;
+}
+
+@keyframes btsImage {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.bts img:hover {
+  filter: drop-shadow(0 0 3.2rem var(--text-color));
+}
+
+.lovely_heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+  filter: drop-shadow(0 0 3.2rem var(--text-color));
+}
+
+.lovely_heart img {
+  width: 5%;
+  cursor: pointer;
+  animation: floatImage 4s ease-in-out infinite;
+  transition: 0.3s ease-in;
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.lovely_heart img:hover {
+  filter: drop-shadow(0 -2px 3.5rem var(--second-color));
+}
+
+/* break points */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header_img img {
+    height: 89rem;
+    /* object-fit: cover; */
+    object-fit: fill;
+  }
+
+  .heart_gif img {
+    transform: scale(1.2);
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 1.2rem 3%;
+  }
+
+  .header_img img {
+    height: 66vw;
+  }
+
+  .section {
+    padding: 10rem 3% 2rem;
+  }
+
+  .heart_gif img {
+    margin-top: 3rem;
+  }
+
+  .socal-icon img {
+    width: 10vw;
+  }
+
+  .army .heading {
+    padding-top: 13rem;
+  }
+
+  .songs .heading {
+    padding-top: 13rem;
+  }
+
+  .bts {
+    margin-top: -15.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    text-align: center;
+    background: var(--bg-color);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  .home {
+    flex-direction: column;
+  }
+
+  .header_img img {
+    height: 54rem;
+    object-fit: fill;
+  }
+
+  .heart_gif img {
+    box-shadow: inset 0 0 35px 5px var(--main-color), 0 0 200px var(--bg-color),
+      inset 0 -2px 1px var(--main-color);
+    position: relative;
+    top: -37rem;
+    left: -4rem;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .socal-icon {
+    position: static;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: -20rem;
+    margin-bottom: 10rem;
+  }
+
+  .socal-icon img {
+    width: 8vw;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+  }
+
+  .about_img {
+    width: 70vw;
+    margin-top: 4rem;
+    padding-left: 4rem;
+    margin-top: 0;
+  }
+
+  .about_img img {
+    width: 80%;
+  }
+
+  .army .heading {
+    padding-top: 14rem;
+  }
+
+  .army-containe {
+    margin-top: 4rem;
+  }
+
+  .card {
+    margin-top: 16rem;
+    transform: scale(1.1);
+  }
+
+  .card p {
+    font-size: 1.5rem;
+  }
+
+  .songs .heading {
+    padding-top: 14rem;
+  }
+
+  .bts {
+    margin-top: -12rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .heart_gif img {
+    margin-top: 1rem;
+    transform: scale(1.2);
+  }
+
+  .socal-icon img {
+    width: 10vw;
+  }
+
+  .song_box {
+    height: 27rem;
+    width: 90%;
+    flex-flow: column;
+  }
+
+  .song_img {
+    height: 70%;
+    width: 100%;
+  }
+
+  .song {
+    height: 30%;
+    width: 100%;
+  }
+
+  .song h3 {
+    margin-top: 10px;
+    margin-bottom: -9px;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .heart_gif img {
+    margin-top: 1rem;
+    margin-left: 26.5rem;
+    transform: scale(1.4);
+  }
+
+  .socal-icon {
+    margin-bottom: 12rem;
+  }
+
+  .army-container {
+    margin-left: -6rem;
+  }
+
+  .bts {
+    margin-top: -16rem;
+  }
+}
+
+@media (max-width: 365px) {
+  .home_img img {
+    width: 90vw;
+  }
+
+  .heart_gif img {
+    margin-top: 2rem;
+    margin-left: 22.3rem;
+    transform: scale(1.6);
+  }
+
+  .mb_img img {
+    width: 80%;
+  }
+
+  .card p {
+    font-size: 1.3rem;
+  }
+
+  .lovely_heart {
+    margin-top: 2rem;
+    padding: 1.4rem;
+  }
+
+  .lovely_heart img {
+    width: 10%;
+  }
+
+  .socal-icon img {
+    width: 12vw;
+  }
+
+  .bts img {
+    width: 12%;
+    margin-top: -6rem;
+    margin-left: -0.5rem;
+  }
+}
